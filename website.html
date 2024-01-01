@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Prediction</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('7D7o.gif') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            height: 100vh;
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 1em;
+            text-align: center;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(2, 2, 2, 0.8);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        label {
+            margin-bottom: 8px;
+        }
+
+        input {
+            padding: 8px;
+            margin-bottom: 16px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .prediction {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        #graphImage {
+            max-width: 100%;
+            height: auto;
+            display: none; /* initially hide the image */
+            margin-top: 20px;
+        }
+
+        footer {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Stock Prediction</h1>
+    </header>
+    <main>
+        <form id="predictionForm">
+            <label for="stockSymbol">Stock Symbol:</label>
+            <input type="text" id="stockSymbol" placeholder="Enter stock symbol" required>
+
+            <button type="button" onclick="predictStock()">Predict</button>
+        </form>
+
+        <div class="prediction" id="predictionResult"></div>
+
+        <img id="graphImage" src="stockresult.png" alt="Stock Prediction Graph">
+    </main>
+    <footer>
+        &copy; 2023 Stock Prediction Website
+    </footer>
+
+    <script>
+        function predictStock() {
+            var predictionResult = "Upward trend expected for AMZN";
+
+            setTimeout(function() {
+                document.getElementById("predictionResult").innerHTML = `<p>${predictionResult}</p>`;
+                document.getElementById("graphImage").src = 'stockresult.png';
+                document.getElementById("graphImage").style.display = 'inline-block';
+            }, 2000); // 1000 milliseconds = 1 seconds
+        }
+    </script>
+</body>
+</html>
